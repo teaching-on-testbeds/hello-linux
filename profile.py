@@ -1,4 +1,4 @@
-"""This topology has one host.
+"""This topology has one host. Also, the `pcmanfm` file explorer is installed.
 
 To use this topology, follow the instructions at: [Hello Linux](https://teaching-on-testbeds.github.io/hello-linux/)
 
@@ -19,6 +19,7 @@ request = pc.makeRequestRSpec()
 
 # Set up first host - romeo
 node_romeo = request.RawPC("romeo")
+node_romeo.addService(rspec.Execute(shell="bash", command="/usr/bin/sudo /usr/bin/apt update; /usr/bin/sudo /usr/bin/apt -y install pcmanfm"))
 
 node_romeo.startVNC()
 
