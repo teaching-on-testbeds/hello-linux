@@ -720,6 +720,10 @@ ifconfig -a | grep "ether" | awk '{print $2}'
 
 and compare to the previous output, to see what the `awk` command does. 
 
+## Release resources
+
+When you are finished with this experiment, use the "Terminate" button on the experiment page in the CloudLab web portal to release your resources and free them for other experimenters.
+
 
 ---
 
