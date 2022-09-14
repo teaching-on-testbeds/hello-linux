@@ -1,17 +1,19 @@
 # Hello, Linux
 
-In this tutorial, you will learn some basic commands for nagivating the Linux filesystem and for working on remote Linux hosts. It should take you about 90-120 minutes to work through this tutorial.
+In this tutorial, you will learn some basic commands for navigating the Linux filesystem and for working on remote Linux hosts. It should take you about 90-120 minutes to work through this tutorial.
 
 Before you can run lab experiments on CloudLab, you will need to set up an account and join a project under the supervision of a research advisor or a course instructor. If you haven't set up your CloudLab account yet, follow the instructions in [Hello, CloudLab](https://teaching-on-testbeds.github.io/hello-cloudlab/) to do so.
+
+Note: this tutorial also assumes that you have set `bash` as the default shell in your CloudLab account. If you haven't, you can follow the instructions in [Hello, CloudLab](https://teaching-on-testbeds.github.io/hello-cloudlab/) to do so.
 
 
 ## Reserve and log in to resources on CloudLab
 
 For this experiment, we will use the CloudLab profile available at the following link: [https://www.cloudlab.us/p/cl-education/hello-linux](https://www.cloudlab.us/p/cl-education/hello-linux)
 
-You'll see a brief description of the profile. Click "Next". On the following page, you'll see a diagram of your experiment topology (on the right - in this case, a single host named "romeo"), and on the left you'll be asked to select the "Cluster" on which you want your experiment to run:
+If you visit this link, you'll see a brief description of the profile. Click "Next". On the following page, you'll see a diagram of your experiment topology (on the right - in this case, a single host named "romeo"), and on the left you'll be asked to select the "Cluster" on which you want your experiment to run:
 
-This experiments can run on any cluster. However, since CloudLab is a shared resource, on some occasionas the cluster you select might not have enough available resources to support your experiment. The status indicator next to each cluster tells you roughly how heavily utilized it is at the moment - green indicates that there are not many users, orange means heavy load, and red means that it is almost fully utilized. You are more likely to be successful if you choose a cluster with a green indicator.
+This experiment can run on any cluster. However, since CloudLab is a shared resource, on some occasions the cluster you select might not have enough available resources to support your experiment. The status indicator next to each cluster tells you roughly how heavily utilized it is at the moment - green indicates that there are not many users, orange means heavy load, and red means that it is almost fully utilized. You are more likely to be successful if you choose a cluster with a green indicator.
 
 After you select a cluster, you can leave the "Name" field blank, or give your experiment a name - it's your choice. Also make sure your "Project" is selected. Then, click "Next".
 
@@ -34,9 +36,9 @@ As your resources come online, you'll see their progress on the CloudLab experim
 
 ### Exercise - local and remote terminals
 
-For CloudLab-based lab assignments, the only commands you will run on your *local* host (your laptop are PC) are SSH or SCP commands, to log in to or transfer files from hosts on CloudLab. **All other commands will run on CloudLab hosts**. It's therefore very important to be able to identify *where* a command will run. You can do this by looking at the terminal *prompt*!
+For CloudLab-based lab assignments, the only commands you will run on your *local* host (your laptop are PC) are SSH or SCP commands, to log in to or transfer files from hosts on CloudLab. **All other commands will run on remote hosts on CloudLab**. It's therefore very important to be able to identify *where* a command will run. You can do this by looking at the terminal *prompt*!
 
-When you first open a new terminal window in the terminal application that is installed on your laptop or PC, you'll have a _local_ shell open. Make a note of what the prompt looks like. For example, mine looks like this:
+When you first open a new terminal window in the terminal application (such as `cmder`, `iTerm2`, built in `Terminal` app) that is installed on your laptop or PC, you'll have a _local_ shell open. Make a note of what the prompt looks like. For example, mine looks like this in the built-in `terminal` application on my Linux PC:
 
 ```
 ffund@ffund-xps:~$
@@ -49,7 +51,7 @@ the prompt would end with a `#` instead.) Yours may look similar, or very differ
 
 When you log in to a remote host using an `ssh` command, the terminal prompt will change - at the very least, it will show the hostname of the remote host instead of the hostname on the laptop you are working on. When working on remote hosts, the prompt is useful for determining *where* you are running a command.
 
-In particular, if your SSH session is idle for some time, you may find that you get disconnected from the remote host. When you try to type a command in the terminal window, you'll see something like this:
+In particular, if your SSH session is idle for some time, you may find that you get disconnected from the remote host on CloudLab ("romeo" in the example below). When you try to type a command in the terminal window, you'll see something like this:
 
 ```
 ffund01@romeo:~$ packet_write_wait: Connection to 206.196.180.202 port 25106: Broken pipe
@@ -158,7 +160,7 @@ be filled out, and you can then hit Enter to run it.
 
 Tab autocompletion will only fill out the entire command if only one command on the 
 system matches what you've entered so far. If there are multiple matching 
-commands, Tabl will show you all of them. You'll have to continue 
+commands, Tab will show you all of them. You'll have to continue 
 typing out the one you want until there is only one match, and then Tab
 will autocomplete it for you. Try typing
 
@@ -226,7 +228,7 @@ several operations on a file.) Here are some useful shortcuts you can try:
 !$  # last argument of last command in history
 ```
 
-## 1.2 Navigating the filesystem
+## Navigating the filesystem
 
 
 In this section, you will learn about the structure of the Linux filesystem, and some basic commands for navigating the filesystem: `pwd`, `ls`, `cd`, `mkdir`
@@ -528,7 +530,7 @@ To move files back and forth between your laptop and a remote system that you ac
 scp [OPTIONS] SOURCE DESTINATION
 ```
 
-where `SOURCE` is the full address of the location where the file is currently llocated, and `DESTINATION` is the address of the location that you want to copy a file to.
+where `SOURCE` is the full address of the location where the file is currently located, and `DESTINATION` is the address of the location that you want to copy a file to.
 
 When you are transferring a file from a remote host (e.g. a host on a testbed) to your laptop, you will run `scp` from a terminal *on your laptop* (NOT a terminal that is logged in to the remote host), and the syntax will look like this:
 
@@ -557,11 +559,11 @@ and the output would look like this:
 newfile.txt                                      100%    13     0.1KB/s   00:00    
 ```
 
-and then, when you run `ls`, you should see the `services` file in your current directory. 
+and then, when you run `ls`, you should see the `newfile.txt` file in your current directory. 
 
 
 > **Note**
-> Avoid a common SCP error: don't forget the last argument that specifies the local path to which you want to copy the file - in this example, the `.` which signifies "copy to my current working directory"! 
+> Avoid a common `scp` error: don't forget the last argument that specifies the local path to which you want to copy the file - in this example, the `.` which signifies "copy to my current working directory"! 
 
 
 You'll have to make sure you have the necessary file permissions to write files to the directory you are working in! If you get a message indicating a file permission error, you may have to specify a path to a directory in which you have write permission, instead of the `.` argument.
@@ -582,7 +584,7 @@ In this section, you will learn how to use the commands `head`, `tail`, `less`, 
 
 When working in a terminal session, we'll often want to see more or less of a command that has a lot of output.
 
-As an examples, we will use the file `/etc/services`. This file lists networked service names, along with the port number and transport-layer protocol each one uses.
+As an example, we will use the file `/etc/services`. This file lists networked service names, along with the port number and transport-layer protocol each one uses.
 
 If you run
 
@@ -623,7 +625,7 @@ To page through one line of output at a time, use
 less /etc/services
 ```
 
-which will show the entire file, but one "page" a time. Use Enter, the up and down arrow keys, or the Page Up and Page Down keys to scroll through the file, or press `q` to quit at any time.
+which will show the entire file, but one "page" at a time. Use Enter, the up and down arrow keys, or the Page Up and Page Down keys to scroll through the file, or press `q` to quit at any time.
 
 One useful feature of `less` is the ability to search for a word. Suppose you want to know what port the `smtp` mail service uses. You can open the file with
 
