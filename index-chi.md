@@ -354,10 +354,6 @@ and you can change its contents. The use Ctrl + O to write it
 **o**ut to file, and hit Enter to confirm the file name to which to save.
 Use Ctrl + X to exit.
 
-If you refer back to your graphical VNC session, you'll see the text file you created in the file explorer, and you can double-click it to open it in a text editor:
-
-![Opening a file in the VNC session.](images/file-explorer-open-text.png)
-
 
 You will use `nano` often in the lab, for example when you are asked to modify a configuration file for a networked service. Take a few moments now to practice using it and become familiar with how it works.
 
