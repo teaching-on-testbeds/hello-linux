@@ -7,7 +7,13 @@ Before you can run lab experiments on FABRIC, you will need to set up an account
 
 ## Reserve and log in to resources on FABRIC
 
-For this experiment, you will need a single server on FABRIC.  You can use the instructions in [Hello, FABRIC](https://teaching-on-testbeds.github.io/hello-fabric/) to set up a server.
+For this experiment, you will need a single server on FABRIC.  To set this up, open a terminal in your FABRIC Jupyter environment, and run
+
+```
+git clone https://github.com/teaching-on-testbeds/hello-linux
+```
+
+then open the `start_here.ipynb` notebook inside the `hello-linux` directory. Use the first part of this notebook to set up a server.
 
 Then, open an SSH session to the server using the terminal in the JupyterHub environment on FABRIC.
 
@@ -220,21 +226,21 @@ This is a _full path_. For example, after running the commands above, I would se
 the following output for `pwd`:
 
 ```
-/users/ffund00/new
+/home/ubuntu/new
 ```
 
 When you run commands that involve a file or directory, you can always 
 give a full path, which starts with a `/` and contains the entire directory
 tree up until the file or directory you are interested in. For example, if my home directory is
-`/users/ffund00`, I can run 
+`/home/ubuntu`, I can run 
 
 ```
-cd /users/ffund00
+cd /home/ubuntu
 ```
 
-to return to your home directory. Alternatively, you can give a path that is
+to return to the home directory. Alternatively, you can give a path that is
 _relative_ to the directory you are in. For example, when I am inside my home
-directory (`/users/ffund00` - yours will be different), which has a directory 
+directory (`/home/ubuntu`), which has a directory 
 called `new` inside it, I can navigate into the `new` directory with 
 a relative path:
 
@@ -246,11 +252,10 @@ or the absolute path:
  
 
 ```
-cd /users/ffund00/new
+cd /home/ubuntu/new
 ```
 
-The concepts and commands in this section will be essential for future lab assignments. They will be especially important when you use `scp` to retrieve data from your experiments (which you'll learn more about shortly) - you will need to be able to find out the absolute path of the file you want to retrieve, so that you can use it in your `scp` command.
-
+The concepts and commands in this section will be essential for future lab assignments. They will be especially important when you need to retrieve data from your experiments (which you'll learn more about shortly) - you will need to be able to find out the absolute path of the file you want to retrieve.
 
 Some useful shortcuts for navigating the filesystem:
 
