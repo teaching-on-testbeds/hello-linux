@@ -51,7 +51,7 @@ Keep an eye on that terminal prompt while you are working on the lab exercises i
 
 **Lab report**: Show a screenshot or copy and paste from your terminal to show the terminal prompt of your _local_ shell. 
 
-**Lab report**: Show a screenshot or copy and paste from your terminal to show the terminal prompt when you are logged in to the "romeo" host in your experiment.
+**Lab report**: Show a screenshot or copy and paste from your terminal to show the terminal prompt when you are logged in to the remote host in your experiment.
 
 ## Learning the basics of the Bash shell
 
