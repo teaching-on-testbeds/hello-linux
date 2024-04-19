@@ -48,11 +48,6 @@ Keep an eye on that terminal prompt while you are working on the lab exercises i
 > **Note**
 > *All* of the commands in this experiment, except for SSH and SCP commands, should be executed in the terminal on the remote host you have reserved on Chameleon.
 
-
-**Lab report**: Show a screenshot or copy and paste from your terminal to show the terminal prompt of your _local_ shell. 
-
-**Lab report**: Show a screenshot or copy and paste from your terminal to show the terminal prompt when you are logged in to the remote host in your experiment.
-
 ## Learning the basics of the Bash shell
 
 When you run commands in a terminal environment, you are actually *programming* 
