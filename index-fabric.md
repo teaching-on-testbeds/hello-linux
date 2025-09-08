@@ -412,12 +412,12 @@ This is not exclusive to the `ls` command - virtually *every* Linux command has 
 
 Use `wget` to download a file from the Internet. 
 
-For example, to download a file I've put at 
-https://witestlab.poly.edu/bikes/README.txt
+For example, to download a file at
+`https://raw.githubusercontent.com/teaching-on-testbeds/hello-linux/refs/heads/main/index-fabric.md`
 we can run
 
 ```
-wget https://witestlab.poly.edu/bikes/README.txt
+wget https://raw.githubusercontent.com/teaching-on-testbeds/hello-linux/refs/heads/main/index-fabric.md
 ```
 
 Then, use
@@ -429,7 +429,7 @@ ls
 to verify that you have retrieved the file, and
 
 ```
-cat README.txt
+cat index-fabric.md
 ```
 
 see its contents.
