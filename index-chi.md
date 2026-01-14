@@ -445,11 +445,11 @@ This is not exclusive to the `ls` command - virtually *every* Linux command has 
 Use `wget` to download a file from the Internet. 
 
 For example, to download a file at 
-`wget https://raw.githubusercontent.com/teaching-on-testbeds/hello-linux/refs/heads/main/index-chi.md`
+`https://raw.githubusercontent.com/teaching-on-testbeds/hello-linux/refs/heads/main/index-chi.md`
 we can run
 
 ```
-wget wget https://raw.githubusercontent.com/teaching-on-testbeds/hello-linux/refs/heads/main/index-chi.md
+wget https://raw.githubusercontent.com/teaching-on-testbeds/hello-linux/refs/heads/main/index-chi.md
 ```
 
 Then, use

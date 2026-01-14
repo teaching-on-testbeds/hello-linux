@@ -435,15 +435,6 @@ cat index-fabric.md
 see its contents.
 Similarly, you can download anything from the web by URL.
 
-> **Note**: Occasionally, students may see the following error when attempting this exercise:
-> 
-> Resolving witestlab.poly.edu (witestlab.poly.edu)... failed: Temporary failure in name resolution.
-> wget: unable to resolve host address ‘witestlab.poly.edu’
-> 
-> This can happen if there is a problem with the DNS server at the testbed site you are using. To practice using `wget`, you can just use a different URL instead. For example:
-> 
-> `wget https://raw.githubusercontent.com/teaching-on-testbeds/hello-linux/main/index.md` 
-
 
 ##  Manipulating output of a command
 
